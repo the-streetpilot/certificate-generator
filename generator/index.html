@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Certificate Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Certificate Generator</h1>
+    
+    <div class="container">
+        <div class="left-panel">
+        <input type="file" id="excelInput" accept=".xlsx, .xls">
+    <input type="file" id="templateInput" accept="image/*">
+       <select id="fieldSelect"></select>
+     <p>Select a field to edit its properties</p>
+            <div id="fieldCheckboxes"></div>
+     </div>
+
+        <div class="center-panel">
+          <canvas id="preview"></canvas>
+       <button onclick="generateCertificates()">Generate Certificates</button>
+        </div>
+
+        <div class="right-panel">
+         <div class="style-controls">
+       <div>
+       <label>Font:</label>
+        <input type="text" id="fontSearch" placeholder="Search fonts..." style="padding: 5px; margin: 5px 0; width: calc(100% - 22px);">
+          <select id="fontSelect" style="width: calc(100% - 22px);"> 
+      <option value="Arial">Arial</option>
+                   <option value="Times New Roman">Times New Roman</option>
+              <option value="Courier">Courier</option>
+    </select>
+ </div>
+                <div>
+           <label>Size:</label>
+                    <input type="number" id="fontSize" value="16" min="8" max="72">
+          </div>
+                
+       <div>
+              <label>Align:</label>
+             <select id="textAlign">
+                    <option value="left">Left</option>
+        <option value="center">Center</option>
+                  <option value="right">Right</option>
+                 </select>
+        </div>
+                
+        <div>
+        <label>Color:</label>
+      <input type="color" id="textColor" value="#000000">
+       </div>
+       </div>
+   
+       <div class="move-buttons">
+        <div class="dpad">
+            <button class="dpad-btn up">↑</button>
+            <button class="dpad-btn left">←</button>
+            <button class="dpad-btn right">→</button>
+            <button class="dpad-btn down">↓</button>
+        </div>
+    </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9235ebad3d29ade7',t:'MTc0MjQ4MTE2NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body>
+</html>
